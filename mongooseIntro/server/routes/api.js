@@ -19,13 +19,13 @@ router.post('/person', function (req, res) {
 
 router.put('/person/:id', function (req, res) {
     let id = req.params.id
-    Person.findByIdAndUpdate(id, { age: 80 }, function (err, person) {
+    Person.findByIdAndUpdate(id, { age: 90 }, function (err, person) {
         res.end()
-    })
+    })    
 })
 
 router.delete('/apocalypse', function (req, res) {
-    Person.find({}, function (err, person) {
+    Person.find({}, function (err, people) {
         people.forEach(p => p.remove())
     })
     res.end()
